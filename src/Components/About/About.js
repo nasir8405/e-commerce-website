@@ -1,0 +1,39 @@
+import React from "react";
+import { HeaderSection } from "../Common/HeaderSection";
+
+export const About = () => {
+  return (
+    <>
+      <HeaderSection heading="/ About" />
+      <section className="container">
+        <div className="row py-5">
+          <div className="col-sm-12 col-md-12 col-lg-6">
+            <img
+              src="https://react-course-comfy-sloth-store.netlify.app/static/media/hero-bcg.a876f19f.jpeg"
+              alt="about"
+              width="100%"
+              height="500px"
+            />
+          </div>
+          <div className="col-sm-12 col-md-12 col-lg-6 my-3 d-flex align-items-center">
+            <div>
+              <h1>Our Story</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat
+                accusantium sapiente tempora sed dolore esse deserunt eaque
+                excepturi, delectus error accusamus vel eligendi, omnis beatae.
+                Quisquam, dicta. Eos quod quisquam esse recusandae vitae neque
+                dolore, obcaecati incidunt sequi blanditiis est exercitationem
+                molestiae delectus saepe odio eligendi modi porro eaque in
+                libero minus unde sapiente consectetur architecto. Ullam rerum,
+                nemo iste ex, eaque perspiciatis nisi, eum totam velit saepe sed
+                quos similique amet. Ex, voluptate accusamus nesciunt totam
+                vitae esse iste.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};

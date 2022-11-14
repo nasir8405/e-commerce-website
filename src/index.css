@@ -1,13 +1,144 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+* {
+  font-size: 1.1rem;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+}
+h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+p {
+  line-height: 2;
+  max-width: 45em;
+  margin-bottom: 2rem;
+  color: #617d98;
+  font-size: 1rem;
+}
+.anchor {
+  text-decoration: none;
+}
+.container {
+  max-width: 1170px !important;
+  width: 85vw !important;
+  padding: 0 !important;
+}
+.header-content-container {
+  display: flex;
+  align-items: center;
+}
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+.accent-img1 {
+  position: relative;
+  z-index: 5;
+}
+.accent-img1 > img,
+.accent-img2 > img {
+  border-radius: 0.3rem;
+}
+.accent-img1::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 80%;
+  background: #decbc0;
+  bottom: 0%;
+  left: -7%;
+  border-radius: 5px;
+  z-index: -1;
+}
+.accent-img2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.my-btn {
+  text-transform: uppercase;
+  background-color: #ab7a5f;
+  padding: 0.75rem 1.5rem;
+  letter-spacing: 0.1rem;
+  display: inline-block;
+  font-weight: 400;
+  transition: all 0.3s linear;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  border-radius: 0.25rem;
+  border-color: transparent;
+  color: white;
+}
+.my-btn:hover {
+  color: #453227;
+  background-color: #c5a491;
+  transition: 0.5s;
+}
+.header p {
+  font-size: 1.25rem;
+}
+
+.section-2 {
+  background-color: #f1f5f8;
+}
+.home-product-container {
+  position: relative;
+}
+
+.section-3 {
+  background-color: #eaded7;
+}
+.footer-container {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.about-section-1 {
+  background-color: #eaded7;
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #453227;
+}
+
+.imageUrlBtn {
+  border: none;
+  padding: 0;
+}
+.imageUrlBtn > img {
+  border-radius: 5px;
+}
+.imageActive {
+  border: 2px solid #ab7a5f;
+  border-radius: 5px;
 }
