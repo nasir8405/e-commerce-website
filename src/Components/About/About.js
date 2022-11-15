@@ -1,19 +1,15 @@
 import React from "react";
 import { HeaderSection } from "../Common/HeaderSection";
+import about from "../../Assets/Images/about.jpeg";
 
 export const About = () => {
   return (
     <>
-      <HeaderSection heading="/ About" />
+      <HeaderSection heading=" / About" />
       <section className="container">
         <div className="row py-5">
           <div className="col-sm-12 col-md-12 col-lg-6">
-            <img
-              src="https://react-course-comfy-sloth-store.netlify.app/static/media/hero-bcg.a876f19f.jpeg"
-              alt="about"
-              width="100%"
-              height="500px"
-            />
+            <img src={about} alt="about" width="100%" height="500px" />
           </div>
           <div className="col-sm-12 col-md-12 col-lg-6 my-3 d-flex align-items-center">
             <div>

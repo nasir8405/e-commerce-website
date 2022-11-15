@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ProductCard } from "../Common/Products/ProductCard";
+import header from "../../Assets/Images/header.jpeg";
+import header1 from "../../Assets/Images/header1.jpeg";
 export const Home = () => {
   const featuredProducts = useSelector(
     (state) => state.reducer.featuredProducts
@@ -27,18 +29,10 @@ export const Home = () => {
           </div>
           <div className="col-sm-12 col-md-10 col-lg-6 my-5 img-container">
             <div className="accent-img1">
-              <img
-                src="https://react-course-comfy-sloth-store.netlify.app/static/media/hero-bcg.a876f19f.jpeg"
-                alt="r"
-                height="550px"
-              />
+              <img src={header} alt="header" height="550px" />
             </div>
             <div className="accent-img2">
-              <img
-                src="https://react-course-comfy-sloth-store.netlify.app/static/media/hero-bcg-2.78991864.jpeg"
-                alt="r"
-                width="250px"
-              />
+              <img src={header1} alt="header" width="250px" />
             </div>
           </div>
         </div>

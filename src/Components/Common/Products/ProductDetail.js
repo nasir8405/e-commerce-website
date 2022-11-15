@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { HeaderSection } from "../HeaderSection";
 
 export const ProductDetail = () => {
@@ -15,7 +15,7 @@ export const ProductDetail = () => {
   };
   return (
     <>
-      <HeaderSection heading={`/ Products / ${product.title}`} />
+      <HeaderSection heading={`${product.title}`} product=" / Product / " />
       <section className="container">
         <div className="row py-5">
           <div className="col-6">
@@ -61,7 +61,6 @@ export const ProductDetail = () => {
                   <strong>Brand : </strong>
                   {product.brand}
                 </p>
-                <hr />
               </div>
               <div>
                 <p>
@@ -70,10 +69,9 @@ export const ProductDetail = () => {
                 </p>
               </div>
               <div>
-                <div>
-                  <button>-</button>1<button>+</button>
-                </div>
-                <button>Add to Cart</button>
+                <Link to="/cart" className="my-btn anchor">
+                  Add to Cart
+                </Link>
               </div>
             </div>
           </div>

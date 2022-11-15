@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
+import { ModalComponent } from "../Modal/ModalComponent";
 
 export const Navigation = () => {
   return (
@@ -44,8 +45,12 @@ export const Navigation = () => {
                 </Nav.Link>
               </Nav>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Cart</Nav.Link>
-                <Nav.Link href="#action2">Login</Nav.Link>
+                <Nav.Link as={Link} to="/cart">
+                  Cart
+                </Nav.Link>
+                <Nav.Link>
+                  <ModalComponent />
+                </Nav.Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

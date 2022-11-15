@@ -142,3 +142,25 @@ p {
   border: 2px solid #ab7a5f;
   border-radius: 5px;
 }
+.header-ancor {
+  font-size: 1.75rem !important;
+}
+ul {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 54.1vh;
+}
+
+.modal-btn {
+  border: none;
+  background-color: transparent;
+  color: #0000008c;
+  padding: 0;
+}
