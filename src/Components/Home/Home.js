@@ -29,7 +29,7 @@ export const Home = () => {
           </div>
           <div className="col-sm-12 col-md-10 col-lg-6 my-5 img-container">
             <div className="accent-img1">
-              <img src={header} alt="header" height="550px" />
+              <img src={header} alt="header" height="550px" width="100%" />
             </div>
             <div className="accent-img2">
               <img src={header1} alt="header" width="250px" />

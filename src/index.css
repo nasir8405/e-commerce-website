@@ -51,6 +51,7 @@ p {
   display: flex;
   justify-content: flex-end;
   z-index: 2;
+  overflow: hidden;
 }
 .accent-img1 {
   position: relative;
@@ -155,7 +156,6 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 54.1vh;
 }
 
 .modal-btn {
@@ -163,4 +163,59 @@ ul {
   background-color: transparent;
   color: #0000008c;
   padding: 0;
+}
+.cart-table {
+  margin: 1rem 0;
+}
+.cart-table td {
+  padding: 1rem;
+}
+
+.cart-table img {
+  width: 75px;
+}
+
+th {
+  padding: 1.5rem;
+  border-bottom: 1px solid #bcccdc !important;
+}
+
+.cart-btn-1 {
+  text-transform: capitalize;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+}
+.cart-btn-2 {
+  padding: 0.3rem;
+  text-transform: capitalize;
+  background-color: #222;
+  font-size: 0.8rem;
+}
+
+.align-text-space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout-btn {
+  width: 100%;
+}
+.height {
+  height: 54.1vh;
+}
+.counter-btn {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.3rem;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+}
+.sign-btn {
+  color: black;
+}
+.signup-btn {
+  color: black;
 }

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { HeaderSection } from "../HeaderSection";
+import { Action } from "../../../Redux/Action/action";
 
 export const ProductDetail = () => {
   const products = useSelector((state) => state.reducer.products);
+  const cartData = useSelector((state) => state.reducer.cartData);
   const params = useParams();
   const product = products.find((item) => {
     return item.id === params.id;
@@ -12,6 +14,26 @@ export const ProductDetail = () => {
   const [url, setImageUrl] = useState(product.url);
   const setUrl = (e, url) => {
     setImageUrl(url);
+  };
+  const dispatch = useDispatch();
+  const addProductToCart = (id) => {
+    const fiterAddProduct = cartData.filter((product) => {
+      return product.id === id;
+    });
+    if (fiterAddProduct.length === 0) {
+      dispatch(
+        Action({
+          type: "ADDTOCART",
+          payload: {
+            ...product,
+            noOfProducts: 1,
+            subtotal: product.price,
+          },
+        })
+      );
+    } else {
+      alert("Product Already In Cart");
+    }
   };
   return (
     <>
@@ -69,7 +91,11 @@ export const ProductDetail = () => {
                 </p>
               </div>
               <div>
-                <Link to="/cart" className="my-btn anchor">
+                <Link
+                  to="/cart"
+                  className="my-btn anchor"
+                  onClick={() => addProductToCart(product.id)}
+                >
                   Add to Cart
                 </Link>
               </div>
