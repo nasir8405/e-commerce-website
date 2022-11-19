@@ -1,6 +1,7 @@
 import { productData } from "../../Pages/Products/mockData";
 import {
   ADDTOCART,
+  ADDUSER,
   all,
   CLEARCART,
   DECREASEPRODUCT,
@@ -55,6 +56,8 @@ export default function reducer(state = productData, action) {
       return { ...state, cartData: decrease };
     case CLEARCART:
       return { ...state, cartData: [] };
+    case ADDUSER:
+      return { ...state, users: [...state.users, action.payload] };
     case action.type:
       const officeProducts = state.products.filter((product) => {
         return product.type === action.type;

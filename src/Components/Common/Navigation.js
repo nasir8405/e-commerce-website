@@ -1,4 +1,3 @@
-import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -12,11 +11,7 @@ export const Navigation = () => {
       <Navbar key="lg" expand="lg">
         <Container className="py-2">
           <Navbar.Brand as={Link} to="/">
-            <Image
-              src="https://react-course-comfy-sloth-store.netlify.app/static/media/logo.221f6b13.svg"
-              width="175px"
-              style={{ margin: "-15px" }}
-            />
+            E-commerce
           </Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
           <Navbar.Offcanvas
@@ -26,10 +21,7 @@ export const Navigation = () => {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                <Image
-                  src="https://react-course-comfy-sloth-store.netlify.app/static/media/logo.221f6b13.svg"
-                  width="175px"
-                />
+                E-commerce
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

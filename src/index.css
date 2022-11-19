@@ -219,3 +219,18 @@ th {
 .signup-btn {
   color: black;
 }
+
+.dropdown-btn {
+  background-color: transparent;
+  border: 0;
+  padding-bottom: 1rem;
+}
+.dropdown {
+  display: block;
+  position: absolute !important;
+  background-color: whitesmoke;
+  z-index: 100;
+  right: 8%;
+  top: 70%;
+  padding: 1rem;
+}
