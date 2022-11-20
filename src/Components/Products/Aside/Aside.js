@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { Action } from "../../Redux/Action/action";
+import { Action } from "../../../Redux/Action/action";
 
 export const Aside = () => {
   const productType = useSelector((state) => state.reducer.productType);
@@ -16,14 +16,18 @@ export const Aside = () => {
   };
   return (
     <div className="col-sm-12 col-md-12 col-lg-3">
-      <input placeholder="search" onChange={(e) => onChangeHandle(e)} />
-      <div>
+      <input
+        placeholder="search"
+        onChange={(e) => onChangeHandle(e)}
+        className=""
+      />
+      <div className="my-3">
         <strong>Category</strong>
       </div>
       <ul>
         {productType.map((productType) => {
           return (
-            <li key={productType.id}>
+            <li key={productType.id} className="py-1">
               <Link
                 to={`/products/${productType.type}`}
                 className="anchor text-dark"

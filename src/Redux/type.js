@@ -7,3 +7,5 @@ export const DECREASEPRODUCT = "DECREASEPRODUCT";
 export const CLEARCART = "CLEARCART";
 export const ADDUSER = "ADDUSER";
 export const LOGINAUTHENTICATION = "LOGINAUTHENTICATION";
+export const SETUSER = "SETUSER";
+export const LOGOUT = "LOGOUT";

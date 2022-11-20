@@ -1,9 +1,10 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Action } from "../../Redux/Action/action";
-import { CLEARCART } from "../../Redux/type";
-import { HeaderSection } from "../Common/HeaderSection";
+import { Action } from "../../../Redux/Action/action";
+import { Header } from "../../Common/Header/Header";
+import "./Cart.css";
 
 export const Cart = () => {
   const cartData = useSelector((state) => state.reducer.cartData);
@@ -39,7 +40,7 @@ export const Cart = () => {
   const clearCart = () => {
     dispatch(
       Action({
-        type: CLEARCART,
+        type: "CLEARCART",
       })
     );
   };
@@ -49,8 +50,11 @@ export const Cart = () => {
   }
   return (
     <div>
-      <HeaderSection heading=" / Cart " />
-      <section className="cart-container">
+      <Header heading=" / Cart " />
+      <section
+        className="
+      cart-container"
+      >
         {cartData.length === 0 ? (
           <div className="height d-flex align-items-center">
             <div>
@@ -64,7 +68,7 @@ export const Cart = () => {
           </div>
         ) : (
           <div className="container py-5">
-            <table className="w-100 cart-table">
+            <Table responsive="sm md lg" className="w-100 cart-table">
               <thead>
                 <tr>
                   <th>Item</th>
@@ -127,18 +131,27 @@ export const Cart = () => {
                   );
                 })}
               </tbody>
-            </table>
-            <hr />
-            <div className="d-flex justify-content-between mb-4">
-              <Link to="/products" className="my-btn cart-btn-1 anchor">
-                Continue Shopping
-              </Link>
-              <button className="my-btn cart-btn-2" onClick={() => clearCart()}>
-                Clear Shopping Cart
-              </button>
+            </Table>
+            <div className="row">
+              <div className="col-6 my-3">
+                <Link
+                  to="/products"
+                  className="my-btn cart-btn-1 anchor text-center"
+                >
+                  Continue Shopping
+                </Link>
+              </div>
+              <div className="col-6 my-3 d-flex justify-content-end">
+                <button
+                  className="my-btn cart-btn-2"
+                  onClick={() => clearCart()}
+                >
+                  Clear Shopping Cart
+                </button>
+              </div>
             </div>
             <div className="row d-flex justify-content-end">
-              <div className="col-4 p-4 border">
+              <div className="col-sm-12 col-md-4 col-md-4 p-4 border">
                 <div className="p-2 align-text-space">
                   <span>
                     <strong>Subtotal : </strong>
@@ -165,7 +178,7 @@ export const Cart = () => {
               </div>
             </div>
             <div className="row d-flex justify-content-end my-3">
-              <div className="col-4 p-0">
+              <div className="col-sm-12 col-md-4 col-lg-4 p-0">
                 <button className="my-btn checkout-btn">Checkout</button>
               </div>
             </div>

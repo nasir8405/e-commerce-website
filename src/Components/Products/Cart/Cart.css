@@ -1,0 +1,23 @@
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.height {
+  height: 54.1vh;
+}
+
+.cart-btn-1 {
+  text-transform: capitalize;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+}
+.cart-btn-2 {
+  padding: 0.3rem;
+  text-transform: capitalize;
+  background-color: #222;
+  font-size: 0.8rem;
+}
+.checkout-btn {
+  width: 100%;
+}

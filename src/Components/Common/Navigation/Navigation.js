@@ -2,10 +2,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ModalComponent } from "../Modal/ModalComponent";
+import { LoginSignup } from "../../Login-Signup/LoginSignup";
+import { User } from "../User/User";
 
 export const Navigation = () => {
+  const user = useSelector((state) => state.reducer.user);
   return (
     <div className="navigation">
       <Navbar key="lg" expand="lg">
@@ -40,9 +43,13 @@ export const Navigation = () => {
                 <Nav.Link as={Link} to="/cart">
                   Cart
                 </Nav.Link>
-                <Nav.Link>
-                  <ModalComponent />
-                </Nav.Link>
+                {user === "" ? (
+                  <Nav.Link>
+                    <LoginSignup />
+                  </Nav.Link>
+                ) : (
+                  <User user={user} />
+                )}
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

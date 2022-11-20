@@ -1,12 +1,12 @@
 import React from "react";
-import { HeaderSection } from "../../Components/Common/HeaderSection";
-import { Aside } from "../../Components/Products/Aside";
-import { Products } from "../../Components/Products/Products";
+import { Header } from "../../Components/Common/Header/Header";
+import { Aside } from "../../Components/Products/Aside/Aside";
+import { Products } from "../../Components/Products/Products/Products";
 
 const ProductPage = () => {
   return (
     <div>
-      <HeaderSection heading=" / Products" />
+      <Header heading=" / Products" />
       <div className="container">
         <div className="row py-5">
           <Aside />

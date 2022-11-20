@@ -1,11 +1,11 @@
 import React from "react";
-import { HeaderSection } from "../Common/HeaderSection";
+import { Header } from "../Common/Header/Header";
 import about from "../../Assets/Images/about.jpeg";
 
 export const About = () => {
   return (
     <>
-      <HeaderSection heading=" / About" />
+      <Header heading=" / About" />
       <section className="container">
         <div className="row py-5">
           <div className="col-sm-12 col-md-12 col-lg-6">

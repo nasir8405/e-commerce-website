@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { HeaderSection } from "../HeaderSection";
 import { Action } from "../../../Redux/Action/action";
+import { Header } from "../../Common/Header/Header";
 
 export const ProductDetail = () => {
   const products = useSelector((state) => state.reducer.products);
@@ -37,10 +37,10 @@ export const ProductDetail = () => {
   };
   return (
     <>
-      <HeaderSection heading={`${product.title}`} product=" / Product / " />
+      <Header heading={`${product.title}`} product=" / Product / " />
       <section className="container">
         <div className="row py-5">
-          <div className="col-6">
+          <div className="col-sm-12 col-md-6 col-lg-6">
             <div>
               <img src={url} alt="about" width="100%" height="500px" />
             </div>
@@ -59,7 +59,7 @@ export const ProductDetail = () => {
               })}
             </div>
           </div>
-          <div className="col-6 d-flex align-items-center">
+          <div className="col-sm-12 col-md-6 col-lg-6 d-flex align-items-center">
             <div>
               <div>
                 <h1>{product.title}</h1>

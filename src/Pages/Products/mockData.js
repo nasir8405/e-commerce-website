@@ -132,4 +132,5 @@ export const productData = {
   selectedProducts: [],
   cartData: [],
   users: [],
+  user: "",
 };

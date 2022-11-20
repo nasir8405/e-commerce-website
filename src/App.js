@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navigation } from "./Components/Common/Navigation";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import ProductPage from "./Pages/Products";
 import AboutPage from "./Pages/About";
-import { ProductDetail } from "./Components/Common/Products/ProductDetail";
-import { Footer } from "./Components/Common/Footer";
-import { Cart } from "./Components/Cart/Cart";
+import { Footer } from "./Components/Common/Footer/Footer";
+import { Navigation } from "./Components/Common/Navigation/Navigation";
+import { Cart } from "./Components/Products/Cart/Cart";
+import { ProductDetail } from "./Components/Products/ProductDetail/ProductDetail";
 
 function App() {
   return (

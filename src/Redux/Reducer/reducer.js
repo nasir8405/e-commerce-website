@@ -6,8 +6,10 @@ import {
   CLEARCART,
   DECREASEPRODUCT,
   INCREASEPRODUCT,
+  LOGOUT,
   REMOVEPRODUCT,
   SEARCH,
+  SETUSER,
 } from "../type";
 export default function reducer(state = productData, action) {
   switch (action.type) {
@@ -58,6 +60,10 @@ export default function reducer(state = productData, action) {
       return { ...state, cartData: [] };
     case ADDUSER:
       return { ...state, users: [...state.users, action.payload] };
+    case SETUSER:
+      return { ...state, user: action.payload };
+    case LOGOUT:
+      return { ...state, user: "" };
     case action.type:
       const officeProducts = state.products.filter((product) => {
         return product.type === action.type;

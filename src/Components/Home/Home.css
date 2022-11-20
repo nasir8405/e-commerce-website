@@ -1,0 +1,32 @@
+.img-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+  overflow: hidden;
+}
+.accent-img1 {
+  position: relative;
+  z-index: 5;
+}
+.accent-img1 > img,
+.accent-img2 > img {
+  border-radius: 0.3rem;
+}
+.accent-img1::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 80%;
+  background: #decbc0;
+  bottom: 0%;
+  left: -7%;
+  border-radius: 5px;
+  z-index: -1;
+}
+.accent-img2 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
