@@ -24,9 +24,7 @@ export default function reducer(state = productData, action) {
       });
       return { ...state, selectedProducts: searchProducts };
     case ADDTOCART:
-      const newCartData = { ...state };
-      newCartData.cartData.push(action.payload);
-      return newCartData;
+      return { ...state, cartData: [...state.cartData, action.payload] };
     case REMOVEPRODUCT:
       const removedProduct = state.cartData.filter((product) => {
         return product.id !== action.payload;

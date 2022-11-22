@@ -14,21 +14,23 @@ export const Home = () => {
     <>
       <section className="section-1">
         <div className="container">
-          <div className="row header-content-container">
-            <div className="col-sm-12 col-md-12 my-5 col-lg-6">
-              <h1>
-                Design Your
-                <br /> Comfort Zone
-              </h1>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto,
-                at sed omnis corporis doloremque possimus velit! Repudiandae
-                nisi odit, aperiam odio ducimus, obcaecati libero et quia
-                tempora excepturi quis alias?
-              </p>
-              <Link to="/products" className="my-btn anchor">
-                SHOP NOW
-              </Link>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-6 my-5 d-flex align-items-center">
+              <div>
+                <h1>
+                  Design Your
+                  <br /> Comfort Zone
+                </h1>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Iusto, at sed omnis corporis doloremque possimus velit!
+                  Repudiandae nisi odit, aperiam odio ducimus, obcaecati libero
+                  et quia tempora excepturi quis alias?
+                </p>
+                <Link to="/products" className="my-btn anchor">
+                  SHOP NOW
+                </Link>
+              </div>
             </div>
             <div className="col-sm-12 col-md-10 col-lg-6 my-5 img-container">
               <div className="accent-img1">

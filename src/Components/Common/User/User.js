@@ -15,7 +15,7 @@ export const User = ({ user }) => {
   };
   return (
     <Dropdown>
-      <Dropdown.Toggle>Dropdown Button</Dropdown.Toggle>
+      <Dropdown.Toggle>Account</Dropdown.Toggle>
 
       <Dropdown.Menu>
         <div className="px-3">

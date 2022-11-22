@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useDispatch, useSelector } from "react-redux";
 import { Action } from "../../Redux/Action/action";
+import "./LoginSignup.css";
 
 export const LoginSignup = () => {
   const dispatch = useDispatch();
@@ -23,19 +24,26 @@ export const LoginSignup = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   const signUpSubmit = () => {
-    dispatch(
-      Action({
-        type: "ADDUSER",
-        payload: user,
-      })
-    );
-    setUser({
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    });
-    setActive("tab1");
+    if (
+      user.firstName !== "" &&
+      user.lastName !== "" &&
+      user.email !== "" &&
+      user.password !== ""
+    ) {
+      dispatch(
+        Action({
+          type: "ADDUSER",
+          payload: user,
+        })
+      );
+      setUser({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
+      setActive("tab1");
+    }
   };
   const [signInDeatil, setSignInDeatil] = useState({
     signinEmail: "",
@@ -60,7 +68,7 @@ export const LoginSignup = () => {
             })
           );
         } else {
-          alert("Please Sign Up First");
+          alert("Hi");
         }
       }
     } else {
@@ -81,7 +89,7 @@ export const LoginSignup = () => {
           <div className="row py-2">
             <div className="col-6 d-flex justify-content-center">
               <Link
-                className="anchor sign-btn"
+                className={`${active === "tab1" ? "active" : ""}`}
                 onClick={() => setActive("tab1")}
               >
                 Sign In
@@ -89,7 +97,7 @@ export const LoginSignup = () => {
             </div>
             <div className="col-6 d-flex justify-content-center">
               <Link
-                className="anchor signup-btn"
+                className={`${active === "tab2" ? "active" : ""}`}
                 onClick={() => setActive("tab2")}
               >
                 Sign Up
@@ -121,7 +129,6 @@ export const LoginSignup = () => {
                   />
                 </Form.Group>
                 <Button
-                  variant="primary"
                   type="submit"
                   className="w-100"
                   onClick={() => signInSubmit()}
@@ -143,6 +150,9 @@ export const LoginSignup = () => {
                     placeholder="Enter first name"
                     name="firstName"
                     value={firstName}
+                    className={`${
+                      user.firstName === "" ? "border-danger" : ""
+                    }`}
                     onChange={(e) => onHandleChange(e)}
                   />
                 </Form.Group>
@@ -153,6 +163,7 @@ export const LoginSignup = () => {
                     placeholder="Enter last name"
                     name="lastName"
                     value={lastName}
+                    className={`${user.lastName === "" ? "border-danger" : ""}`}
                     onChange={(e) => onHandleChange(e)}
                   />
                 </Form.Group>
@@ -163,6 +174,7 @@ export const LoginSignup = () => {
                     placeholder="Enter email"
                     name="email"
                     value={email}
+                    className={`${user.email === "" ? "border-danger" : ""}`}
                     onChange={(e) => onHandleChange(e)}
                   />
                 </Form.Group>
@@ -173,11 +185,11 @@ export const LoginSignup = () => {
                     placeholder="Password"
                     name="password"
                     value={password}
+                    className={`${user.password === "" ? "border-danger" : ""}`}
                     onChange={(e) => onHandleChange(e)}
                   />
                 </Form.Group>
                 <Button
-                  variant="primary"
                   type="submit"
                   className="w-100"
                   onClick={() => signUpSubmit()}

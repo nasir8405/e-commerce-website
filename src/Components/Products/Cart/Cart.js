@@ -51,24 +51,21 @@ export const Cart = () => {
   return (
     <div>
       <Header heading=" / Cart " />
-      <section
-        className="
-      cart-container"
-      >
-        {cartData.length === 0 ? (
-          <div className="height d-flex align-items-center">
-            <div>
-              <h2>Your cart is empty</h2>
-              <div className="d-flex align-center justify-content-center">
-                <Link to="/products" className="my-btn anchor my-2">
-                  FILL IT
-                </Link>
-              </div>
+      {cartData.length === 0 ? (
+        <div className="height d-flex align-items-center justify-content-center">
+          <div>
+            <h2>Your cart is empty</h2>
+            <div className="d-flex align-center justify-content-center">
+              <Link to="/products" className="my-btn anchor my-2">
+                FILL IT
+              </Link>
             </div>
           </div>
-        ) : (
-          <div className="container py-5">
-            <Table responsive="sm md lg" className="w-100 cart-table">
+        </div>
+      ) : (
+        <div className="container">
+          <div>
+            <Table responsive="sm md lg">
               <thead>
                 <tr>
                   <th>Item</th>
@@ -79,16 +76,19 @@ export const Cart = () => {
                 </tr>
               </thead>
               <tbody>
-                {cartData.map((product, index) => {
+                {cartData.map((product) => {
                   return (
                     <tr key={product.id}>
                       <td>
                         <span className="me-3">
-                          <img
-                            src={product.url}
-                            width="80px"
-                            alt={product.tilte}
-                          />
+                          <Link to={`/product/${product.id}`}>
+                            <img
+                              src={product.url}
+                              width="80px"
+                              height="50px"
+                              alt={product.tilte}
+                            />
+                          </Link>
                         </span>
                         <span>{product.title}</span>
                       </td>
@@ -132,6 +132,8 @@ export const Cart = () => {
                 })}
               </tbody>
             </Table>
+          </div>
+          <div className="container">
             <div className="row">
               <div className="col-6 my-3">
                 <Link
@@ -150,15 +152,17 @@ export const Cart = () => {
                 </button>
               </div>
             </div>
+          </div>
+          <div className="container">
             <div className="row d-flex justify-content-end">
               <div className="col-sm-12 col-md-4 col-md-4 p-4 border">
-                <div className="p-2 align-text-space">
+                <div className="p-2 d-flex justify-content-between">
                   <span>
                     <strong>Subtotal : </strong>
                   </span>
                   <span>{subtotal}</span>
                 </div>
-                <div className="p-2 align-text-space">
+                <div className="p-2 d-flex justify-content-between">
                   <span>
                     <strong>Shipping Fee : </strong>
                   </span>
@@ -166,7 +170,7 @@ export const Cart = () => {
                 </div>
                 <hr />
                 <div>
-                  <h3 className="p-2 align-text-space">
+                  <h3 className="p-2 d-flex justify-content-between">
                     <span>
                       <strong>Order Total : </strong>
                     </span>
@@ -177,14 +181,16 @@ export const Cart = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="container">
             <div className="row d-flex justify-content-end my-3">
               <div className="col-sm-12 col-md-4 col-lg-4 p-0">
                 <button className="my-btn checkout-btn">Checkout</button>
               </div>
             </div>
           </div>
-        )}
-      </section>
+        </div>
+      )}
     </div>
   );
 };

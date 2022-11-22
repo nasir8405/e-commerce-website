@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { Action } from "../../../Redux/Action/action";
+import "./Aside.css";
 
 export const Aside = () => {
   const productType = useSelector((state) => state.reducer.productType);
@@ -19,12 +20,12 @@ export const Aside = () => {
       <input
         placeholder="search"
         onChange={(e) => onChangeHandle(e)}
-        className=""
+        className="search-input"
       />
-      <div className="my-3">
+      <div className="mt-3">
         <strong>Category</strong>
       </div>
-      <ul>
+      <ul className="p-2">
         {productType.map((productType) => {
           return (
             <li key={productType.id} className="py-1">

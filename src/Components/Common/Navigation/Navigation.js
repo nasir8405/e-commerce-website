@@ -6,9 +6,17 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { LoginSignup } from "../../Login-Signup/LoginSignup";
 import { User } from "../User/User";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import "./Navigation.css";
 
 export const Navigation = () => {
   const user = useSelector((state) => state.reducer.user);
+  const cartData = useSelector((state) => state.reducer.cartData);
+  let totalNoOfProduct = 0;
+  for (let index = 0; index < cartData.length; index++) {
+    const element = cartData[index];
+    totalNoOfProduct = totalNoOfProduct + element.noOfProducts;
+  }
   return (
     <div className="navigation">
       <Navbar key="lg" expand="lg">
@@ -40,8 +48,9 @@ export const Navigation = () => {
                 </Nav.Link>
               </Nav>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link as={Link} to="/cart">
-                  Cart
+                <Nav.Link as={Link} to="/cart" className=" cart-link">
+                  Cart <AiOutlineShoppingCart />
+                  <div className="noOfProducts">{totalNoOfProduct}</div>
                 </Nav.Link>
                 {user === "" ? (
                   <Nav.Link>
